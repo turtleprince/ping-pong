@@ -3,6 +3,7 @@
 
 var right_wrist_x = 0;
 
+var game_status = "";
 
 var right_wrist_y = 0;
 var scoreRightWrist = 0;
@@ -32,6 +33,7 @@ function setup() {
   var canvas = createCanvas(700, 600);
   canvas.parent("canvas");
 
+  game_status = "";
 
   var video = createCapture(VIDEO);
 
@@ -53,6 +55,10 @@ function gotPoses(results) {
   }
 }
 
+function start_game(){
+  game_status = "start";
+  document.getElementById("status").innerHTML = "Game Is Loaded";
+}
 
 function draw() {
 
@@ -71,6 +77,9 @@ if(scoreRightWrist >0.2){
   stroke("red");
   circle(right_wrist_x, right_wrist_y, 30);
 
+  if(game_status == "start"){
+
+  }
 }
 
   
